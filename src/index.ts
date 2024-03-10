@@ -3,6 +3,10 @@ import express from 'express';
 import cors from 'cors';
 import * as bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
+import Container from 'typedi';
+import { AsyncError } from './middlewares/asyncError';
+
+const asyncError = Container.get(AsyncError);
 
 dotenv.config();
 
@@ -18,6 +22,8 @@ app.use(bodyParser.json({ limit: '50mb' }));
 const port = process.env.PORT || 30100;
 
 app.use(express.json());
+
+app.use(asyncError.errorHandling);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
