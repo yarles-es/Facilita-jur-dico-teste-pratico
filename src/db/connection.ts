@@ -3,7 +3,6 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 // Configuração de conexão com o banco de dados:
-
 const user = process.env.PG_USER || 'admin';
 const host = process.env.PG_HOST || 'localhost';
 const database = process.env.PG_DB || 'facilita_juridico';
@@ -18,4 +17,14 @@ const pool = new Pool({
   port,
 });
 
-export default pool;
+// Função para testar a conexão com o banco de dados
+async function testDBConnection() {
+  try {
+    await pool.query('SELECT 1');
+    console.log('Conexão com o banco de dados estabelecida com sucesso.');
+  } catch (error) {
+    console.error('Erro ao conectar ao banco de dados:', error);
+  }
+}
+
+export { pool, testDBConnection };
