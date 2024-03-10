@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    exposedHeaders: ['Content-Disposition', 'x-new-token'],
+    exposedHeaders: ['Content-Disposition'],
   }),
 );
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));

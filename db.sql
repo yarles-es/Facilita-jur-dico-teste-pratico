@@ -1,9 +1,9 @@
 -- Cria a tabela
-CREATE TABLE clientes (
+CREATE TABLE clients (
   id SERIAL PRIMARY KEY,
-  nome TEXT NOT NULL,
+  name TEXT NOT NULL,
   email TEXT NOT NULL,
-  telefone TEXT NOT NULL,
-  coordenada_x DECIMAL(10,2) NOT NULL,
-  coordenada_y DECIMAL(10,2) NOT NULL
+  phone TEXT NOT NULL,
+  coord_x DECIMAL(10,2) NOT NULL,
+  coord_y DECIMAL(10,2) NOT NULL
 );
