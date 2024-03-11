@@ -5,6 +5,8 @@ import styles from "./style.module.css";
 import Navbar from "../../components/NavBar";
 import Modal from "../../components/Modal";
 import Form from "../../components/Form";
+import ViewRoutes from "../../components/ViewRoutes";
+import Table from "../../components/Table";
 
 const ClientsPage = () => {
   const [clientes, setClientes] = useState<Client[]>([]);
@@ -43,17 +45,17 @@ const ClientsPage = () => {
         modalRoute={modalRoute}
         setModalRoute={setModalRoute}
       />
-      <ul className={styles.list}>
-        {clientes.map((cliente) => (
-          <li key={cliente.id} className={styles.listItem}>
-            {cliente.name} - {cliente.email}
-          </li>
-        ))}
-      </ul>
+      <Table clients={clientes} />
 
       {modalCreate && (
         <Modal onClose={() => setModalCreate(false)}>
           <Form onClose={onCloseAndRefresh} />
+        </Modal>
+      )}
+
+      {modalRoute && (
+        <Modal onClose={() => setModalRoute(false)}>
+          <ViewRoutes />
         </Modal>
       )}
     </div>

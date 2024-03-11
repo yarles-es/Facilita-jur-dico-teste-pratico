@@ -12,7 +12,7 @@ export const createClient = async (client: Omit<Client, "id">) => {
 };
 
 export const getDeliverCalculatedRoute = async () => {
-  return await genericRequest<Client>(
+  return await genericRequest<Client[]>(
     "get",
     "clients/deliver-calculated-routes"
   );
