@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Client } from "../../../types/Client";
 import { getClients } from "../../../service/client.api";
-import styles from "./ClientsPage.module.css";
+import styles from "./style.module.css";
 import Navbar from "../../components/NavBar";
 import Modal from "../../components/Modal";
 import Form from "../../components/Form";

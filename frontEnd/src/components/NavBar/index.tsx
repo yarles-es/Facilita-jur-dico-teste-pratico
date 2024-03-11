@@ -1,4 +1,4 @@
-import styles from "./Navbar.module.css";
+import styles from "./style.module.css";
 
 type Props = {
   modalCreate: boolean;

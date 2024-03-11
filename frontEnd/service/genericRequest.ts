@@ -18,12 +18,6 @@ export const genericRequest = async <T>(
       data: body ? body : undefined,
     });
 
-    if ("error" in response.data) {
-      if (response.data.error) {
-        return { data: null as unknown as T, error: response.data.error };
-      }
-    }
-
     return { data: response.data }; 
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {

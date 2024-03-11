@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import styles from "./Form.module.css";
+import styles from "./style.module.css";
 import { Client } from "../../../types/Client";
 import { createClient } from "../../../service/client.api";
 
@@ -7,7 +7,7 @@ type ClienteFormProps = {
   onClose: () => void;
 };
 
-const ClienteForm: React.FC<ClienteFormProps> = ({ onClose }) => {
+const Form: React.FC<ClienteFormProps> = ({ onClose }) => {
   const [client, setCliente] = useState<Omit<Client, "id">>({
     name: "",
     email: "",
@@ -48,6 +48,7 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ onClose }) => {
 
     const newClient = await createClient(payload);
     if (newClient.error) {
+      console.log("oi")
       alert(newClient.error);
       return;
     }
@@ -124,4 +125,4 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ onClose }) => {
   );
 };
 
-export default ClienteForm;
+export default Form;
