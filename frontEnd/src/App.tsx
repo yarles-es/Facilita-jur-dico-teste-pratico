@@ -1,4 +1,3 @@
-import "./App.css";
 import ClientsPage from "./pages/ClientPage";
 
 function App() {
