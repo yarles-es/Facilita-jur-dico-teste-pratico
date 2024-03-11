@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import styles from "./ClientForm.module.css";
+import styles from "./Form.module.css";
 import { Client } from "../../../types/Client";
 import { createClient } from "../../../service/client.api";
 

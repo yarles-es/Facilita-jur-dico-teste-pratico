@@ -4,7 +4,7 @@ import { getClients } from "../../../service/client.api";
 import styles from "./ClientsPage.module.css";
 import Navbar from "../../components/NavBar";
 import Modal from "../../components/Modal";
-import ClienteForm from "../../components/ClientForm";
+import Form from "../../components/Form";
 
 const ClientsPage = () => {
   const [clientes, setClientes] = useState<Client[]>([]);
@@ -14,15 +14,24 @@ const ClientsPage = () => {
   useEffect(() => {
     const getClientes = async () => {
       const allClients = await getClients();
-      setClientes(allClients);
+      if (allClients.error) {
+        alert(allClients.error);
+        return;
+      }
+      setClientes(allClients.data);
     };
 
     getClientes();
   }, []);
 
-  const onCloseAndRefresh = () => {
+  const onCloseAndRefresh = async () => {
     setModalCreate(false);
-    getClients().then((data) => setClientes(data));
+    const allClients = await getClients();
+    if (allClients.error) {
+      alert(allClients.error);
+      return;
+    }
+    setClientes(allClients.data);
   };
 
   return (
@@ -44,7 +53,7 @@ const ClientsPage = () => {
 
       {modalCreate && (
         <Modal onClose={() => setModalCreate(false)}>
-          <ClienteForm onClose={onCloseAndRefresh} />
+          <Form onClose={onCloseAndRefresh} />
         </Modal>
       )}
     </div>
