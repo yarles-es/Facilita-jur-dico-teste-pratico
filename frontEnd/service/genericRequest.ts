@@ -1,10 +1,6 @@
 import axios from "axios";
 import api from "./api";
 
-export interface SuccessResponse<T> {
-  data: T;
-}
-
 export const genericRequest = async <T>(
   method: "get" | "post" | "put" | "delete",
   url: string,
@@ -19,7 +15,7 @@ export const genericRequest = async <T>(
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.error || "Erro desconhecido");
+      return error.response?.data;
     }
     throw new Error("Erro na requisição");
   }

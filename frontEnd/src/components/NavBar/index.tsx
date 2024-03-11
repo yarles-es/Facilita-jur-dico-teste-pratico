@@ -1,17 +1,27 @@
 import styles from "./Navbar.module.css";
 
 type Props = {
-  modal: boolean;
-  setModal: (modal: boolean) => void;
+  modalCreate: boolean;
+  modalRoute: boolean;
+  setModalCreate: (modal: boolean) => void;
+  setModalRoute: (modal: boolean) => void;
 };
 
-const Navbar: React.FC<Props> = ({ modal, setModal }) => {
+const Navbar: React.FC<Props> = ({
+  modalCreate,
+  modalRoute,
+  setModalCreate,
+  setModalRoute,
+}) => {
   return (
     <div className={styles.navbar}>
-      <span onClick={() => setModal(!modal)} className={styles.navLink}>
+      <span onClick={() => setModalCreate(!modalCreate)} className={styles.navLink}>
         Criar Novo Cliente
       </span>
-      <span onClick={() => setModal(!modal)} className={styles.navLink}>
+      <span
+        onClick={() => setModalRoute(!modalRoute)}
+        className={styles.navLink}
+      >
         Visualizar melhor rota
       </span>
     </div>

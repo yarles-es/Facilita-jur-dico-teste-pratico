@@ -3,6 +3,6 @@ export interface Client {
     name: string;
     email: string;
     phone: string;
-    coord_x: number;
-    coord_y: number;
+    coord_x: number | string;
+    coord_y: number | string;
   }
