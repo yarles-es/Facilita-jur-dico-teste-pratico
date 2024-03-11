@@ -95,5 +95,7 @@ CREATE TABLE clients (
   coord_y DECIMAL(10,2) NOT NULL
 );
 ```
+# Link para explicação em video do projeto:
+https://youtu.be/rqw7cubjTqE
 
 Personalize as versões do Node.js e PostgreSQL e outras informações específicas conforme necessário. Este é um ponto de partida; sinta-se à vontade para adicionar detalhes adicionais como capturas de tela, GIFs de demonstração, e qualquer outra informação que você achar que pode ser útil para quem está tentando entender ou contribuir para o projeto.
