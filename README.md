@@ -11,7 +11,7 @@ Este projeto foi desenvolvido como parte do Teste de Programação para a vaga d
 ## Tecnologias Utilizadas
 
 - **Backend**: Node.js com um banco de dados PostgreSQL.
-- **Frontend**: React para uma interface de usuário responsiva e interativa.
+- **Frontend**: React para uma interface de usuário e interativa.
 
 ## Estrutura do Projeto
 
