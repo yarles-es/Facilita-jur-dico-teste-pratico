@@ -11,7 +11,8 @@ export class ClientService {
   }
 
   async create(client: Client): Promise<void> {
-    return this.clientModel.create(client);
+    const clientLower = client.name.toLowerCase();
+    return this.clientModel.create({ ...client, name: clientLower });
   }
 
   async deliverCalculatedRoutes(): Promise<Client[]> {

@@ -88,7 +88,6 @@ const Form: React.FC<ClienteFormProps> = ({ onClose }) => {
         />
       </div>
 
-      {/* Grupo de Coordenadas com estilo .divCoord */}
       <div className={styles.divCoord}>
         <div>
           <label className={styles.label}>Coordenada X:</label>

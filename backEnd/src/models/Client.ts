@@ -13,7 +13,22 @@ export interface Client {
 @Service()
 export class ClientModel {
   async getAll(): Promise<Client[]> {
-    const res = await pool.query('SELECT * FROM clients');
+    const res = await pool.query(`
+    SELECT 
+    id,
+    name,
+    email,
+    phone,
+    CASE
+      WHEN coord_x = TRUNC(coord_x) THEN TRUNC(coord_x)
+      ELSE coord_x
+    END as coord_x,
+    CASE
+      WHEN coord_y = TRUNC(coord_y) THEN TRUNC(coord_y)
+      ELSE coord_y
+    END as coord_y
+    FROM clients;
+    `);
     return res.rows;
   }
 
