@@ -75,7 +75,7 @@ DB_DATABASE=seu_banco_de_dados
 7. Execute npm start para rodar o servidor em modo de desenvolvimento.
 
 
-#### Frontend
+### Frontend
 
 1. Navegue até a pasta `frontend`.
 2. Instale as dependências com `npm install`.
