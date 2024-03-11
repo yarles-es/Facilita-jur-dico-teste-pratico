@@ -39,7 +39,7 @@ Esta aplicação está configurada para ser executada usando o Docker, o que sim
 
 1. Navegue até a pasta `backend`.
 2. Instale as dependências com `npm install`.
-3. Configure as variáveis de ambiente conforme necessário.
+3. Configure as variáveis de ambiente conforme necessário.(caso não use o docker).
 4. Usando docker execute o comando `npm run docker` para gerar um container com os dados ja completos para o backEnd funcionar.
 5. Execute `npm start` para iniciar o servidor.
 
