@@ -15,9 +15,9 @@ export class ValidateClient {
       validateFieldSchema(req.body, 'coord_x', 'number');
       validateFieldSchema(req.body, 'coord_y', 'number');
       await this.validateClientExists(req.body.name);
-      next();
+      return next();
     } catch (error) {
-      next(error);
+      return next(error);
     }
   }
 

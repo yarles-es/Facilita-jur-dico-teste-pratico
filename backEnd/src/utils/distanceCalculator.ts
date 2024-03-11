@@ -5,6 +5,7 @@ function distanceCalculator(x1: number, y1: number, x2: number, y2: number): num
 }
 
 export function findTheShortestRoute(clients: Client[]): Client[] {
+
   const route: Client[] = [
     {
       name: 'Facilita Juridico',
@@ -14,6 +15,7 @@ export function findTheShortestRoute(clients: Client[]): Client[] {
       coord_y: 0,
     },
   ];
+  
   let clientesNaoVisitados: Client[] = clients.slice();
 
   while (clientesNaoVisitados.length > 0) {
