@@ -77,7 +77,6 @@ const Form: React.FC<ClienteFormProps> = ({ onClose }) => {
           onChange={handleChange}
         />
       </div>
-
       <div>
         <label className={styles.label}>Telefone:</label>
         <input
@@ -89,27 +88,28 @@ const Form: React.FC<ClienteFormProps> = ({ onClose }) => {
         />
       </div>
 
-      <div>
-        <label className={styles.label}>Coordenada Y:</label>
-        <input
-          type="number"
-          name="coord_y"
-          className={styles.input}
-          value={client.coord_y}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        {" "}
-        <label className={styles.label}>Coordenada X:</label>
-        <input
-          type="number"
-          name="coord_x"
-          className={styles.input}
-          value={client.coord_x}
-          onChange={handleChange}
-        />
+      {/* Grupo de Coordenadas com estilo .divCoord */}
+      <div className={styles.divCoord}>
+        <div>
+          <label className={styles.label}>Coordenada X:</label>
+          <input
+            type="number"
+            name="coord_x"
+            className={styles.input}
+            value={client.coord_x}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label className={styles.label}>Coordenada Y:</label>
+          <input
+            type="number"
+            name="coord_y"
+            className={styles.input}
+            value={client.coord_y}
+            onChange={handleChange}
+          />
+        </div>
       </div>
       <button type="submit" className={`${styles.button} ${styles.buttonSave}`}>
         Salvar

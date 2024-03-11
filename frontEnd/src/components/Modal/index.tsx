@@ -7,13 +7,14 @@ type Props = {
 };
 
 const Modal: React.FC<Props> = ({ onClose, children }) => {
-  const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (e.target === e.currentTarget) onClose();
+  const handleModalContentClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
   };
 
   return (
-    <div className={style.modalBackground} onClick={handleBackgroundClick}>
-      <div className={style.modalContent}>
+    <div className={style.modalBackground} onClick={onClose}>
+      <div className={style.modalContent} onClick={handleModalContentClick}>
+        <button className={style.closeButton} onClick={onClose}>&times;</button>
         {children}
       </div>
     </div>
@@ -21,3 +22,4 @@ const Modal: React.FC<Props> = ({ onClose, children }) => {
 };
 
 export default Modal;
+
