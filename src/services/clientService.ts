@@ -1,5 +1,6 @@
 import { Service } from 'typedi';
 import { Client, ClientModel } from '../models/Client';
+import { findTheShortestRoute } from '../utils/distanceCalculator';
 
 @Service()
 export class ClientService {
@@ -11,5 +12,11 @@ export class ClientService {
 
   async create(client: Client): Promise<void> {
     return this.clientModel.create(client);
+  }
+
+  async deliverCalculatedRoutes(): Promise<Client[]> {
+    const clients = await this.clientModel.getAll();
+    const route = findTheShortestRoute(clients);
+    return route;
   }
 }

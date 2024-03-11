@@ -24,4 +24,9 @@ export class ClientModel {
       [name, email, phone, coord_x, coord_y],
     );
   }
+
+  async findName(name: string): Promise<Client[]> {
+    const res = await pool.query('SELECT * FROM clients WHERE name = $1', [name]);
+    return res.rows;
+  }
 }

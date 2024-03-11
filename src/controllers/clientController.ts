@@ -23,4 +23,13 @@ export class ClientController {
       next(error);
     }
   }
+
+  async deliverCalculatedRoutes(req: Request, res: Response, next: NextFunction): Promise<void> {
+    try {
+      const clients = await this.clientService.deliverCalculatedRoutes();
+      res.status(200).json(clients);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
